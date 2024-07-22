@@ -1,0 +1,15 @@
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  row-gap: 20px;
+  height: 620px;
+
+  .bottom-content {
+    display: flex;
+    column-gap: 90px;
+    height: 60%;
+    // justify-content: space-between;
+  }
+}

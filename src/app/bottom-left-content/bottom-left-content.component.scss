@@ -1,0 +1,14 @@
+.your_city_block {
+  width: 100%;
+  background-color: #1d1f33;
+  border-radius: 40px;
+
+  padding: 30px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 20px;
+  height: 100%;
+}
