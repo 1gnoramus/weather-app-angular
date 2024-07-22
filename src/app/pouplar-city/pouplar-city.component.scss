@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --background-color: rgb(10, 12, 33);
+  --secondary-color: #eb1555;
+  --primary-color-light: #1d1f33;
+  --roboto-font: "Roboto";
+  --active-element-color-light: #3e4054;
+}
+
+.popular_city {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  h2 {
+    color: white;
+  }
+  h1 {
+    color: white;
+  }
+  p {
+    color: #eb1555;
+  }
+}
+
+.circle {
+  background-color: white;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  padding: 2px;
+}
+.weather_info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+}
