@@ -1,10 +1,11 @@
 <div class="popular_city">
   <div class="circle">
-    <img src="/src/assets/city_icon1.png" alt="" />
+    <!-- <img src="/src/app/assets/city_icon1.png" alt="" /> -->
+    <img />
   </div>
   <div class="weather_info">
-    <h2>New York</h2>
-    <p>Sunny</p>
-    <h2>31 C</h2>
+    <h2>{{ weatherData.name }}</h2>
+    <p>{{ weatherData.weather[0].main }}</p>
+    <h2>{{ getRoundedTemp(weatherData.main.temp) }} °C</h2>
   </div>
 </div>
