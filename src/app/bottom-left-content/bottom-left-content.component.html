@@ -1,13 +1,19 @@
 <div class="your_city_block">
   <div class="city_info">
-    <h1>Almaty, Kazakhstan</h1>
-    <h2>09:30 <span>am</span></h2>
-    <h3>26 March</h3>
-    <p>Tuesday</p>
+    <h1>
+      {{ user_city_weather_data.name }},
+      {{ user_city_weather_data.sys.country }}
+    </h1>
+    <h2>16:15 <span>am</span></h2>
+    <h3>28 July</h3>
+    <p>Friday</p>
   </div>
   <div class="weather_info">
-    <img src="assets/sunny.png" alt="" />
-    <h2>31 <span>°C</span></h2>
+    <img alt="weatherIcon" [src]="imagePath" />
+    <h2>
+      {{ getRoundedTemp(user_city_weather_data.main.temp - 273) }}
+      <span>°C</span>
+    </h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, iste.</p>
   </div>
 </div>

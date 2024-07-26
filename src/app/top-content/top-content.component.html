@@ -7,7 +7,7 @@
   </div>
   <div class="search_ciry">
     <label for="city-input">City</label>
-    <input type="text" id="city-input" />
+    <input [(ngModel)]="cityName" type="text" id="city-input" />
     <button id="search_button" (click)="onSearchClick()">Search</button>
   </div>
 </div>

@@ -5,8 +5,10 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './bottom-right-content.component.html',
-  styleUrl: './bottom-right-content.component.scss',
+  styleUrls: ['./bottom-right-content.component.scss'],
 })
 export class BottomRightContentComponent {
-  @Input() weatherData: any;
+  imagePath: string = 'assets/sunny.png';
+
+  @Input() search_city_weather_data: any;
 }

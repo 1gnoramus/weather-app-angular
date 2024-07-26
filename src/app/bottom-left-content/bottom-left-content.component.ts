@@ -1,45 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LocationService } from '../services/location';
+import { WeatherService } from '../services/weather';
 
 @Component({
   selector: 'app-bottom-left-content',
   standalone: true,
   imports: [],
   templateUrl: './bottom-left-content.component.html',
-  styleUrl: './bottom-left-content.component.scss',
+  styleUrls: ['./bottom-left-content.component.scss'],
 })
 export class BottomLeftContentComponent {
-  private apiKey = 'defaa80eb6e43e947faa745459177730';
-  private openWeatherMapURL = 'https://api.openweathermap.org/data/2.5/weather';
-  constructor(private location: LocationService) {}
-  lat: any;
-  long: any;
+  @Input() user_city_weather_data: any;
+  imagePath: string = 'assets/sunny.png';
+
+  constructor(
+    private location: LocationService,
+    private weather: WeatherService
+  ) {}
+
   ngOnInit(): void {
-    document.addEventListener('DOMContentLoaded', () => {
-      this.location
-        .getGeolocation()
-        .then(() => {
-          this.getWeatherByCoords(
-            this.location.latitude,
-            this.location.longitude
-          );
-        })
-        .then(() => {
-          // this.getWeatherByCoords();
+    this.location.getGeolocation().then(() => {
+      this.weather
+        .getWeatherByCoords(this.location.latitude, this.location.longitude)
+        .then((data) => {
+          this.user_city_weather_data = data;
         });
     });
   }
 
-  getWeatherByCoords(lat: number, lon: number): void {
-    const url = `${this.openWeatherMapURL}?lat=${lat}&lon=${lon}&appid=${this.apiKey}`;
-    fetch(url)
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        console.log(res);
-        return res;
-      })
-      .catch((error) => console.error(error.message));
+  getRoundedTemp(temp: number): number {
+    return Math.floor(temp);
   }
 }

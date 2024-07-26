@@ -1,6 +1,7 @@
 .your_city_block {
   width: 100%;
   background-color: #1d1f33;
+  color: white;
   border-radius: 40px;
 
   padding: 30px;
@@ -11,4 +12,10 @@
   justify-content: space-around;
   row-gap: 20px;
   height: 100%;
+  .weather_info {
+    img {
+      // background: url("../../assets/snow.png") no-repeat center;
+      width: 40px;
+    }
+  }
 }
